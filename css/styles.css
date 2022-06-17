@@ -1,0 +1,104 @@
+html {
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100%;
+    min-width: 100%;
+    position: relative;
+}
+
+/* navbar menu */
+.hover-underline-animation {
+    display: block;
+    position: relative;
+    padding: 0.2em 0;
+}
+
+.hover-underline-animation::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0.1em;
+    background-color: hotpink;
+    opacity: 0;
+    transition: opacity 300ms, transform 300ms;
+}
+
+.hover-underline-animation:hover::after,
+.hover-underline-animation:focus::after {
+    opacity: 1;
+    transform: translate3d(0, 0.2em, 0);
+}
+
+/* Scale from center */
+.hover-underline-animation::after {
+    opacity: 1;
+    transform: scale(0);
+    transform-origin: center;
+}
+
+.hover-underline-animation:hover::after,
+.hover-underline-animation:focus::after {
+    transform: scale(1);
+}
+
+
+
+
+/* first banner */
+#banner-wrapper {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    min-height: 400px;
+    background-color: white;
+}
+
+
+/* video-wrapper */
+.video-wrapper {
+    position: relative;
+    height: 400px;
+    min-height: 20em;
+}
+
+
+
+.video-description {
+    position: relative;
+    margin: auto auto;
+    font-size: 2em;
+    color: white;
+}
+
+.video-itself {
+    position: relative;
+}
+
+
+.first-card-header div,
+.second-card-header div {
+    display: table;
+    width: 90%;
+}
+
+
+
+.solid-line {
+    display: table-cell;
+    width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+    border: none;
+}
+
+.solid-line:after {
+    content: '';
+    border-top: 1px solid black;
+    width: 100%;
+    display: inline-block;
+    vertical-align: middle;
+}
