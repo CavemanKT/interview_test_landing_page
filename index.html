@@ -59,7 +59,19 @@
         $(window).on('load', function () {
             $('#loading').hide();
             $('#container').removeClass('hidden')
-        }) 
+        })
+
+        $(window).on('scroll', () => {
+            console.log(window.scrollY)
+            if (window.scrollY > 300) {
+                $('#navigate-to-top').removeClass('hidden')
+                $('nav').addClass('fixed z-50')
+            }
+            else {
+                $('#navigate-to-top').addClass('hidden')
+                $('nav').removeClass('fixed z-50')
+            }
+        })
     </script>
 </head>
 
@@ -67,9 +79,13 @@
     <div id="loading" class="inline flex z-50 justify-content-center m-20 min-h-full">
         <p class="spinner" id="spinner"><i class="fa fa-spinner fa-5x"></i></p>
     </div>
-    <div id="container" class=" hidden w-full">
+    <a href="#container" id="navigate-to-top"
+        class="flex items-center justify-center fixed hidden z-50 bottom-10 right-10 w-16 h-16 rounded-md bg-neutral-500">
+        <i class="fa-solid fa-caret-up fa-5x text-slate-300"></i>
+    </a>
+    <div id="container" class="hidden w-full">
         <!-- navbar -->
-        <nav class="navbar navbar-expand-lg bg-white">
+        <nav class="navbar navbar-expand-lg bg-white w-full">
             <div class="container-fluid d-flex relative justify-content-around">
                 <a class="navbar-brand" href="#">
                     <img src="https://ednovators.org/wp-content/uploads/2020/11/logo.png" alt="教育燃新" width="200"
